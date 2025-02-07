@@ -3,6 +3,7 @@
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
     <string name="image_onboarding">image_onboarding</string>
+    <string name="emptyDefault">""</string>
     <string name="banner">More Passengers, More Earnings</string>
     <string name="subbanner">Increase your score and become a more preferred driver thanks to satisfied passengers</string>
     <string name="start">Start</string>

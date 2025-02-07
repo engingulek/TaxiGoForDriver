@@ -7,6 +7,11 @@ android {
     namespace = "com.example.taxigofordriver"
     compileSdk = 35
 
+
+    buildFeatures {
+        dataBinding = true
+    }
+
     defaultConfig {
         applicationId = "com.example.taxigofordriver"
         minSdk = 24

@@ -1,7 +1,18 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<layout
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
+    >
+    <data>
+        <variable
+            name="uiState"
+            type="com.example.taxigofordriver.ui.onboarding.OnboardingContract.UiState" />
+        <variable
+            name="viewModel"
+            type="com.example.taxigofordriver.ui.onboarding.OnboardingViewModelInterface" />
+    </data>
+<androidx.constraintlayout.widget.ConstraintLayout
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".ui.onboarding.OnboardingFragment">
@@ -11,8 +22,8 @@
         android:layout_width="0dp"
         android:layout_height="0dp"
         android:layout_marginTop="20dp"
-        android:contentDescription="@string/image_onboarding"
         android:scaleType="fitCenter"
+        android:contentDescription="@string/image_onboarding"
         android:src="@drawable/taxi_driver"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHeight_percent="0.4"
@@ -28,7 +39,7 @@
         android:layout_marginStart="20dp"
         android:layout_marginTop="20dp"
         android:layout_marginEnd="20dp"
-        android:text="@string/banner"
+        android:text="@{uiState.banner}"
         android:textSize="24sp"
         android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
@@ -41,7 +52,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="20dp"
-        android:text="@string/subbanner"
+        android:text="@{uiState.subanner}"
         android:textAlignment="center"
         android:textSize="20sp"
         app:layout_constraintEnd_toEndOf="parent"
@@ -57,8 +68,9 @@
         android:layout_marginEnd="10dp"
         android:layout_marginBottom="60dp"
         android:background="@drawable/basic_button_design"
-        android:text="@string/start"
+        android:text="@{uiState.startButton}"
         android:textColor="#FFFFFF"
+
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent" />
@@ -66,3 +78,4 @@
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>
