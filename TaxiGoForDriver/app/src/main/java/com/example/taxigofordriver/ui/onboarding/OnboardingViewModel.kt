@@ -44,4 +44,6 @@ class OnboardingViewModel : ViewModel(),OnboardingViewModelInterface {
     private fun startBttnOnClicked() {
         Log.e("clicked","clicked")
     }
+
+    fun oT() {}
 }

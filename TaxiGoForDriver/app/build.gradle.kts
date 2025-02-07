@@ -52,4 +52,14 @@ dependencies {
     testImplementation(libs.junit)
     androidTestImplementation(libs.androidx.junit)
     androidTestImplementation(libs.androidx.espresso.core)
+
+
+    //Test
+    testImplementation("org.junit.jupiter:junit-jupiter-api:5.7.0")
+    testImplementation("org.junit.jupiter:junit-jupiter-engine:5.7.0")
+    testImplementation("org.mockito:mockito-core:3.7.7")
+    testImplementation("org.mockito.kotlin:mockito-kotlin:4.0.0")
+
+    implementation("androidx.arch.core:core-testing:2.2.0")
+    implementation("org.jetbrains.kotlinx:kotlinx-coroutines-test:1.6.0")
 }
