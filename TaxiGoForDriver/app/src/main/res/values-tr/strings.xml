@@ -6,5 +6,10 @@
     <string name="emptyDefault">""</string>
     <string name="banner">Daha Fazla Yolcu, Daha Fazla Kazanç</string>
     <string name="subbanner"> Memnun yolcular sayesinde puanını yükselt, daha fazla tercih edilen sürücü ol</string>
-    <string name="start">Start</string>
+    <string name="start">Başla</string>
+    <string name="phone">Telefon</string>
+    <string name="coutiune">Devam</string>
+    <string name="enter_phone">Telefon Numaranı Gir</string>
+    <string name="error_zero" >Lütfen telefon numaranızı 5 ile başlayarak girin</string>
+    <string name="digit_error">0-9 arasında rakam girin</string>
 </resources>

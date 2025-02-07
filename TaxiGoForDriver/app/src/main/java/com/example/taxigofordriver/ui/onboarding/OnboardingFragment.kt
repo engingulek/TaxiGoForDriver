@@ -9,6 +9,8 @@ import androidx.databinding.DataBindingUtil
 import com.example.taxigofordriver.R
 import com.example.taxigofordriver.databinding.FragmentOnboardingBinding
 import androidx.fragment.app.viewModels
+import androidx.navigation.Navigation
+import com.example.taxigofordriver.utils.toFragment
 
 
 class OnboardingFragment : Fragment() {
@@ -39,7 +41,8 @@ class OnboardingFragment : Fragment() {
 
     private fun uiActions(){
         design.startBttn.setOnClickListener {
-            viewModel.onAction(OnboardingContract.UiAction.onClickedStartBttn)
+          val nav = OnboardingFragmentDirections.toEnterPhone()
+            Navigation.toFragment(requireView(),nav)
         }
     }
 
