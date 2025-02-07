@@ -7,4 +7,7 @@
     <string name="banner">More Passengers, More Earnings</string>
     <string name="subbanner">Increase your score and become a more preferred driver thanks to satisfied passengers</string>
     <string name="start">Start</string>
+    <string name="phone">Phone</string>
+    <string name="coutiune">Continue</string>
+    <string name="enter_phone">Enter Your Phone</string>
 </resources>
