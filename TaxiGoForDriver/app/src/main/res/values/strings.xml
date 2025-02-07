@@ -10,4 +10,6 @@
     <string name="phone">Phone</string>
     <string name="coutiune">Continue</string>
     <string name="enter_phone">Enter Your Phone</string>
+    <string name="error_zero" >Please enter your phone number starting with 5</string>
+    <string name="digit_error">Enter numbers 0-9</string>
 </resources>

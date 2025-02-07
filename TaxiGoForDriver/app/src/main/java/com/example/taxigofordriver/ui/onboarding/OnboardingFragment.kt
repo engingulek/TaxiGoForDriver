@@ -41,7 +41,7 @@ class OnboardingFragment : Fragment() {
 
     private fun uiActions(){
         design.startBttn.setOnClickListener {
-            val nav = OnboardingFragmentDirections.toEnterPhone()
+          val nav = OnboardingFragmentDirections.toEnterPhone()
             Navigation.toFragment(requireView(),nav)
         }
     }

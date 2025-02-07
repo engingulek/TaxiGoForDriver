@@ -10,4 +10,6 @@
     <string name="phone">Telefon</string>
     <string name="coutiune">Devam</string>
     <string name="enter_phone">Telefon Numaranı Gir</string>
+    <string name="error_zero" >Lütfen telefon numaranızı 5 ile başlayarak girin</string>
+    <string name="digit_error">0-9 arasında rakam girin</string>
 </resources>

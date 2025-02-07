@@ -16,7 +16,7 @@
     </fragment>
     <fragment
         android:id="@+id/enterPhoneFragment"
-        android:name="com.example.taxigofordriver.ui.enterPhone.EnterPhoneFragment"
+        android:name="com.example.taxigofordriver.ui.enterphone.EnterPhoneFragment"
         android:label="fragment_enter_phone"
         tools:layout="@layout/fragment_enter_phone" />
 </navigation>
