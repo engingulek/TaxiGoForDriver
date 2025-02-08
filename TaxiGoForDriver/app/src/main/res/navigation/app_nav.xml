@@ -18,5 +18,14 @@
         android:id="@+id/enterPhoneFragment"
         android:name="com.example.taxigofordriver.ui.enterphone.EnterPhoneFragment"
         android:label="fragment_enter_phone"
-        tools:layout="@layout/fragment_enter_phone" />
+        tools:layout="@layout/fragment_enter_phone" >
+        <action
+            android:id="@+id/toConfirmCode"
+            app:destination="@id/confirmCodeFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/confirmCodeFragment"
+        android:name="com.example.taxigofordriver.ui.confirmCode.ConfirmCodeFragment"
+        android:label="fragment_confirm_code"
+        tools:layout="@layout/fragment_confirm_code" />
 </navigation>
