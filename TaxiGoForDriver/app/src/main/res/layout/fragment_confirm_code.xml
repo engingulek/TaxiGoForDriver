@@ -1,4 +1,14 @@
 <?xml version="1.0" encoding="utf-8"?>
+<layout>
+    <data>
+        <variable
+            name="uiState"
+            type="com.example.taxigofordriver.ui.confirmCode.ConfirmCodeContract.UiState" />
+
+
+
+        <import type="android.view.View" />
+    </data>
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
@@ -13,9 +23,9 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="20dp"
         android:layout_marginEnd="20dp"
-        android:background="@android:drawable/edit_text"
+        android:background="@{uiState.errorState.first ? @drawable/error_edit_text : @drawable/edittext_design}"
         android:gravity="center"
-        android:hint="XXXXXX"
+        android:hint="@string/xxxxxx"
         android:inputType="number"
         android:maxLength="6"
         android:padding="12dp"
@@ -31,7 +41,7 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="30dp"
         android:layout_marginTop="30dp"
-        android:text="TextView"
+        android:text="@{uiState.title}"
         android:textSize="20sp"
         android:textStyle="bold"
         app:layout_constraintStart_toStartOf="parent"
@@ -42,7 +52,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="20dp"
-        android:text="TextView"
+        android:text="@{uiState.subTitle}"
         app:layout_constraintStart_toStartOf="@+id/codeTitleTxt"
         app:layout_constraintTop_toBottomOf="@+id/codeTitleTxt" />
 
@@ -53,8 +63,9 @@
         android:layout_marginStart="10dp"
         android:layout_marginTop="50dp"
         android:layout_marginEnd="10dp"
+
+        android:text="@{uiState.buttonTitle}"
         android:background="@drawable/basic_button_design"
-        android:text="Button"
         android:textColor="#FFFFFF"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -65,12 +76,13 @@
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginTop="14dp"
-        android:text="TextView"
+        android:text="@{uiState.errorState.second}"
         android:textColor="#FF0000"
-        android:visibility="invisible"
+        android:visibility="@{uiState.errorState.first ? View.VISIBLE : View.INVISIBLE}"
         app:layout_constraintEnd_toEndOf="@+id/confirmCodeTxt"
         app:layout_constraintStart_toStartOf="@+id/confirmCodeTxt"
         app:layout_constraintTop_toBottomOf="@+id/confirmCodeTxt" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

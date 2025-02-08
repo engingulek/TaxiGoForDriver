@@ -42,7 +42,7 @@ class EnterPhoneFragment : Fragment() {
 
 
         design.countiuneBttn.setOnClickListener {
-           val nav = EnterPhoneFragmentDirections.toConfirmCode()
+           val nav = EnterPhoneFragmentDirections.toConfirmCode(viewModel.phoneNumber)
             Navigation.toFragment(requireView(),nav)
         }
 
