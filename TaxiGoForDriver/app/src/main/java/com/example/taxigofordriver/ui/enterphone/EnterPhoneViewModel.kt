@@ -8,13 +8,16 @@ import com.example.taxigofordriver.R
 
 interface EnterPhoneViewModelInterface {
     var uiState : LiveData<EnterPhoneContract.UiState>
-
+    var phoneNumber : String
     fun onAction(action:EnterPhoneContract.UiAction)
+
 }
 
 class EnterPhoneViewModel : ViewModel(),EnterPhoneViewModelInterface {
     private var _uiState = MutableLiveData(EnterPhoneContract.UiState())
     override var uiState : LiveData<EnterPhoneContract.UiState> = _uiState
+    private  var _phoneNumber = ""
+    override var phoneNumber:String = _phoneNumber
 
     init {
         setUiState()
@@ -52,6 +55,8 @@ class EnterPhoneViewModel : ViewModel(),EnterPhoneViewModelInterface {
             errorState = !isPhoneValid,
             buttonState = isPhoneValid
         )
+
+        phoneNumber = phone
 
     }
 }

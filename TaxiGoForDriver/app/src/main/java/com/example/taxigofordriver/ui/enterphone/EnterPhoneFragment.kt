@@ -3,15 +3,18 @@ package com.example.taxigofordriver.ui.enterphone
 import android.os.Bundle
 import android.text.Editable
 import android.text.TextWatcher
+import android.util.Log
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.databinding.DataBindingUtil
 import androidx.fragment.app.viewModels
+import androidx.navigation.Navigation
 import com.example.taxigofordriver.R
 import com.example.taxigofordriver.databinding.FragmentEnterPhoneBinding
 import com.example.taxigofordriver.ui.onboarding.OnboardingContract
+import com.example.taxigofordriver.utils.toFragment
 
 
 class EnterPhoneFragment : Fragment() {
@@ -36,6 +39,14 @@ class EnterPhoneFragment : Fragment() {
                 viewModel.onAction(EnterPhoneContract.UiAction.enterPhoneAction(text))
             }
         })
+
+
+        design.countiuneBttn.setOnClickListener {
+           val nav = EnterPhoneFragmentDirections.toConfirmCode(viewModel.phoneNumber)
+            Navigation.toFragment(requireView(),nav)
+        }
+
+
         return  design.root
     }
 

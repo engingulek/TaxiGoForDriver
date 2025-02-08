@@ -12,4 +12,10 @@
     <string name="enter_phone">Telefon Numaranı Gir</string>
     <string name="error_zero" >Lütfen telefon numaranızı 5 ile başlayarak girin</string>
     <string name="digit_error">0-9 arasında rakam girin</string>
+    <string name="xxxxxx">XXXXXX</string>
+    <string name="confirmTitle">Kodunuzu giriniz</string>
+    <string name="send_code">Kodu Gönder</string>
+    <string name="entered">Girilen</string>
+    <string name="code_error">Kod Yanlış</string>
+    <string name="too_min_error">Kod çok kısa</string>
 </resources>
