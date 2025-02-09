@@ -18,4 +18,15 @@
     <string name="entered">Girilen</string>
     <string name="code_error">Kod Yanlış</string>
     <string name="too_min_error">Kod çok kısa</string>
+    <string name="select_image">Resim Seç</string>
+    <string name="name">İsim</string>
+    <string name="surname">Soyisim</string>
+    <string name="car_licence_plate">Araç plakası</string>
+    <string name="please_load_criminal_record">Lütfen Adil Sicil Kaydınızı yükleyin</string>
+    <string name="send_info">Bilgileri Gönder</string>
+    <string name="sedan">Sedan</string>
+    <string name="transporter">Transporter</string>
+    <string name="please_select_taxi_type">Lütfen Taksi Tipini Seçiniz</string>
+    <string name="plate_helper">34 olmadan</string>
+    <string name="too_short">Çok Kısa</string>
 </resources>
