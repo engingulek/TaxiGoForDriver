@@ -31,5 +31,13 @@
         <argument
             android:name="phone"
             app:argType="string" />
+        <action
+            android:id="@+id/toEnterDriverInfo"
+            app:destination="@id/enterDriverInfoFragment" />
     </fragment>
+    <fragment
+        android:id="@+id/enterDriverInfoFragment"
+        android:name="com.example.taxigofordriver.ui.enterDriverInfo.EnterDriverInfoFragment"
+        android:label="fragment_enter_driver_info"
+        tools:layout="@layout/fragment_enter_driver_info" />
 </navigation>
