@@ -17,5 +17,16 @@
     <string name="send_code">Send Code</string>
     <string name="entered">Entered</string>
     <string name="code_error">Code wrong</string>
-   <string name="too_min_error">Code too short</string>
+    <string name="too_min_error">Code too short</string>
+    <string name="select_image">Select Image</string>
+    <string name="name">Name</string>
+    <string name="surname">Surname</string>
+    <string name="car_licence_plate">Car Licence Plate</string>
+    <string name="please_load_criminal_record">Please Load Criminal Record</string>
+    <string name="send_info">Send Info</string>
+    <string name="sedan">Sedan</string>
+    <string name="transporter">Transporter</string>
+    <string name="please_select_taxi_type">Please Select Taxi Type</string>
+    <string name="plate_helper">Without 34</string>
+    <string name="too_short">Too short</string>
 </resources>

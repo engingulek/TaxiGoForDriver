@@ -75,9 +75,10 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="20dp"
             android:background="@{uiState.buttonState ? @drawable/basic_button_design  : @drawable/disable_basic_button}"
+            android:enabled="@{uiState.buttonState}"
             android:text="@{uiState.buttonTitle}"
             android:textColor="#FFFFFF"
-            android:enabled="@{uiState.buttonState}"
+
             app:layout_constraintEnd_toEndOf="@+id/textInputLayout"
             app:layout_constraintStart_toStartOf="@+id/textInputLayout"
             app:layout_constraintTop_toBottomOf="@+id/errorTxt" />

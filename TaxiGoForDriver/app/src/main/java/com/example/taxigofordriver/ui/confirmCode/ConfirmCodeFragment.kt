@@ -9,10 +9,12 @@ import android.view.ViewGroup
 import androidx.core.widget.addTextChangedListener
 import androidx.databinding.DataBindingUtil
 import androidx.fragment.app.viewModels
+import androidx.navigation.Navigation
 import androidx.navigation.fragment.navArgs
 import com.example.taxigofordriver.R
 import com.example.taxigofordriver.databinding.FragmentConfirmCodeBinding
 import com.example.taxigofordriver.databinding.FragmentOnboardingBinding
+import com.example.taxigofordriver.utils.toFragment
 
 class ConfirmCodeFragment : Fragment() {
     private lateinit var design : FragmentConfirmCodeBinding
@@ -39,6 +41,12 @@ class ConfirmCodeFragment : Fragment() {
 
         design.confirmBttn.setOnClickListener {
             viewModel.onAction(ConfirmCodeContract.UiAction.onTappedSendCodeBttn)
+            viewModel.uiState.observe(viewLifecycleOwner) {
+                if(it.buttonState) {
+                    val nav = ConfirmCodeFragmentDirections.toEnterDriverInfo()
+                    Navigation.toFragment(requireView(),nav)
+                }
+            }
         }
         return design.root
     }
