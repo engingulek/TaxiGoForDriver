@@ -39,5 +39,14 @@
         android:id="@+id/enterDriverInfoFragment"
         android:name="com.example.taxigofordriver.ui.enterDriverInfo.EnterDriverInfoFragment"
         android:label="fragment_enter_driver_info"
-        tools:layout="@layout/fragment_enter_driver_info" />
+        tools:layout="@layout/fragment_enter_driver_info" >
+        <action
+            android:id="@+id/toHomeFragment"
+            app:destination="@id/homeFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/homeFragment"
+        android:name="com.example.taxigofordriver.ui.home.HomeFragment"
+        android:label="fragment_home"
+        tools:layout="@layout/fragment_home" />
 </navigation>

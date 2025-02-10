@@ -24,7 +24,7 @@ object EnterDriverInfoContract {
         var surname:Int? = null,
         var carPlate:Int? = null,
         var selectedTypeError:Boolean = true,
-        var sendInfoButtonState :Boolean = false
+        var sendInfoButtonState :Boolean = true
     )
 
     sealed interface UiAction {

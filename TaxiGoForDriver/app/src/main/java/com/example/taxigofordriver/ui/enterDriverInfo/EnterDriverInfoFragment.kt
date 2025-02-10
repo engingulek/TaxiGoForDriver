@@ -13,9 +13,11 @@ import androidx.activity.result.contract.ActivityResultContracts
 import androidx.core.widget.addTextChangedListener
 import androidx.databinding.DataBindingUtil
 import androidx.fragment.app.viewModels
+import androidx.navigation.Navigation
 import com.example.taxigofordriver.R
 import com.example.taxigofordriver.databinding.FragmentEnterDriverInfoBinding
 import com.example.taxigofordriver.ui.confirmCode.ConfirmCodeContract
+import com.example.taxigofordriver.utils.toFragment
 
 
 class EnterDriverInfoFragment : Fragment() {
@@ -100,6 +102,12 @@ class EnterDriverInfoFragment : Fragment() {
 
         design.sendInfoBttn.setOnClickListener {
             viewModel.onAction(EnterDriverInfoContract.UiAction.onTappedSendInfo)
+            viewModel.errorState.observe(viewLifecycleOwner) {
+                if (it.sendInfoButtonState) {
+                    val nav = EnterDriverInfoFragmentDirections.toHomeFragment()
+                    Navigation.toFragment(requireView(),nav)
+                }
+            }
         }
     }
 
