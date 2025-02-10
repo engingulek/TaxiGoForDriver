@@ -30,4 +30,5 @@
     <string name="plate_helper">34 olmadan</string>
     <string name="too_short">Çok Kısa</string>
     <string name="location_access_denied">Konum izni reddedildi</string>
+    <string name="accept">Kabul Et</string>
 </resources>
