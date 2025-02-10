@@ -29,4 +29,5 @@
     <string name="please_select_taxi_type">Lütfen Taksi Tipini Seçiniz</string>
     <string name="plate_helper">34 olmadan</string>
     <string name="too_short">Çok Kısa</string>
+    <string name="location_access_denied">Konum izni reddedildi</string>
 </resources>

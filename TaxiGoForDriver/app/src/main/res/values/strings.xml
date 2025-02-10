@@ -29,4 +29,5 @@
     <string name="please_select_taxi_type">Please Select Taxi Type</string>
     <string name="plate_helper">Without 34</string>
     <string name="too_short">Too short</string>
+    <string name="location_access_denied">Location permission deniedi</string>
 </resources>
