@@ -10,12 +10,14 @@ object HomeContract {
 
     data class UiState (
         var driverState:Boolean = false,
+        var workState:Boolean = false
 
     )
 
 
     sealed interface UIAction {
         data class onTappedStateSwiftch(var state:Boolean): UIAction
+        data object onDestroy:UIAction
     }
 
 }

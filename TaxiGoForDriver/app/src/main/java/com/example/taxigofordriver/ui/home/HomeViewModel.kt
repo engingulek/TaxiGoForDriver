@@ -1,5 +1,7 @@
 package com.example.taxigofordriver.ui.home
 
+import android.os.Handler
+import android.os.Looper
 import android.util.Log
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
@@ -16,9 +18,16 @@ class HomeViewModel : ViewModel(),HomeViewModelInterface {
     private  var _uiState = MutableLiveData(HomeContract.UiState())
     override var uiState: LiveData<HomeContract.UiState> = _uiState
     private var driverState : TaxiDriverState = TaxiDriverState.CLOSE
+    private val handler = Handler(Looper.getMainLooper())
+
+    init {
+        getWork()
+    }
+
     override fun onAction(action: HomeContract.UIAction) {
         when(action) {
             is HomeContract.UIAction.onTappedStateSwiftch ->onTappedStateAction(action.state)
+            HomeContract.UIAction.onDestroy -> onDestroy()
         }
     }
 
@@ -27,6 +36,18 @@ class HomeViewModel : ViewModel(),HomeViewModelInterface {
         _uiState.value = _uiState.value?.copy(
             driverState = state
         )
+    }
 
+   private fun getWork(){
+       handler.postDelayed({
+           _uiState.value = _uiState.value?.copy(
+               workState = true
+           )
+           Log.e("test","test")
+       }, 10_000)
+
+   }
+    private fun onDestroy() {
+        handler.removeCallbacksAndMessages(null)
     }
 }

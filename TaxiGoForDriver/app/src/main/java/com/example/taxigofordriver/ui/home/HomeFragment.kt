@@ -1,5 +1,8 @@
 package com.example.taxigofordriver.ui.home
 
+import android.media.Ringtone
+import android.media.RingtoneManager
+import android.net.Uri
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
@@ -24,6 +27,7 @@ class HomeFragment : Fragment(),LocationManager.LocationCallback {
     private lateinit var flpc:FusedLocationProviderClient
     private lateinit var locationManager: LocationManager
     private lateinit var viewModel:HomeViewModelInterface
+    private var ringtone: Ringtone? = null
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
@@ -37,9 +41,13 @@ class HomeFragment : Fragment(),LocationManager.LocationCallback {
 
         mapView = design.yandexMapId
 
-
         viewModel.uiState.observe(viewLifecycleOwner){
             design.uiState = it
+
+            //TODO: This will be added to HomeContract as WorkStTE
+            if (it.workState) {
+                playDefaultNotificationSound()
+            }
         }
 
         design.stateSwitchId.setOnCheckedChangeListener { _, isChecked ->
@@ -57,7 +65,7 @@ class HomeFragment : Fragment(),LocationManager.LocationCallback {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        MapKitFactory.setApiKey("f07be095-63e3-49cf-9bd8-c99cef347595")
+        MapKitFactory.setApiKey("")
         MapKitFactory.initialize(requireContext())
 
         val tempViewModel : HomeViewModelInterface by viewModels<HomeViewModel>()
@@ -75,6 +83,19 @@ class HomeFragment : Fragment(),LocationManager.LocationCallback {
 
     override fun onPermissionDenied(message:Int) {
         Toast.makeText(requireContext(), getString(message), Toast.LENGTH_SHORT).show()
+    }
+
+    private fun playDefaultNotificationSound() {
+        val notification: Uri = RingtoneManager.getDefaultUri(RingtoneManager.TYPE_NOTIFICATION)
+        ringtone = RingtoneManager.getRingtone(requireContext(), notification)
+        ringtone?.play()
+    }
+
+    override fun onDestroy() {
+        super.onDestroy()
+        ringtone?.stop()
+        viewModel.onAction(HomeContract.UIAction.onDestroy)
+
     }
 
 

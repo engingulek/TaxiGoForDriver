@@ -8,6 +8,8 @@
         <variable
             name="uiState"
             type="com.example.taxigofordriver.ui.home.HomeContract.UiState" />
+
+        <import type="android.view.View" />
     </data>
 <androidx.constraintlayout.widget.ConstraintLayout
     android:layout_width="match_parent"
@@ -28,6 +30,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_alignParentBottom="true"
+            android:visibility="@{uiState.workState ? View.VISIBLE : View.INVISIBLE}"
             android:layout_marginBottom="46dp"
             android:background="#FFFFFF">
 
